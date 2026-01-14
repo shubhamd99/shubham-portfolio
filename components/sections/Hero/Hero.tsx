@@ -14,7 +14,7 @@ import { Navbar } from "@/components/layout/Navbar";
 export default function Hero() {
   const [copied, setCopied] = useState(false);
 
-  const email = "contact@shubham.dev";
+  const email = "shubhamdhage930@gmail.com";
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(email);
