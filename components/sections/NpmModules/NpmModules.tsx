@@ -19,7 +19,7 @@ export default function NpmModules() {
           {/* Illustration */}
           <div className="mb-8 flex justify-center">
             <Image
-              src="/shubham-portfolio/npm-illustration.png"
+              src="/npm-illustration.png"
               alt="NPM Modules Illustration"
               width={280}
               height={280}

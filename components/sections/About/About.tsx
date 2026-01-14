@@ -9,7 +9,7 @@ export default function About() {
           <div className="relative overflow-hidden rounded-2xl">
             <div className="relative h-[520px] md:h-[620px] w-full">
               <Image
-                src="/shubham-portfolio/me.jpg"
+                src="/me.jpg"
                 alt="About me"
                 fill
                 className="object-cover"

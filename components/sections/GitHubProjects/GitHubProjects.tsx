@@ -11,7 +11,7 @@ export default function GitHubProjects() {
         <div className="mb-24 text-center">
           <div className="mb-4 flex justify-center">
             <Image
-              src="/shubham-portfolio/github-illustration.png"
+              src="/github-illustration.png"
               alt="GitHub Projects"
               width={300}
               height={200}
