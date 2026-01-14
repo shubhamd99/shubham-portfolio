@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Shubham D — Senior Frontend Engineer",
   description:
     "Senior Frontend Engineer building scalable React & React Native apps. Open source, performance, and AI tooling.",
+  icons: {
+    icon: "/shubham-portfolio/favicon.png",
+  },
 };
 
 export default function RootLayout({
