@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Senior Frontend Engineer building scalable React & React Native apps. Open source, performance, and AI tooling.",
   icons: {
-    icon: "/shubham-portfolio/favicon.png",
+    icon: "/favicon.png",
   },
 };
 
