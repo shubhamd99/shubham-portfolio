@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx next build",
+    "export": "npx next build",
+    "deploy": "npm run build",
     "start": "next start",
     "lint": "eslint"
   },
