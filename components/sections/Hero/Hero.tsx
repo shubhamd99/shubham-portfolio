@@ -36,7 +36,7 @@ export default function Hero() {
           {/* Illustration */}
           <div className="mb-6 flex justify-center">
             <Image
-              src="/hero-illustration.png"
+              src="/shubham-portfolio/hero-illustration.png"
               alt="Hero Illustration"
               width={280}
               height={280}
