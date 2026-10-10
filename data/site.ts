@@ -159,8 +159,8 @@ export const apps: App[] = [
       { src: "/apps/neondrift/3.jpg", alt: "Neon Drift Zero level 3, Solar Rush", width: 552, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.neondriftzero.app" },
-      { platform: "App Store", status: "review", url: "https://apps.apple.com/app/id6817610594" },
+      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.neondriftzero.app" },
+      { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6817610594" },
     ],
     theme: "neondrift",
   },
