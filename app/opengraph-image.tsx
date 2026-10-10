@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { apps, profile } from "@/data/site";
+import { featuredApps, profile } from "@/data/site";
 
 export const alt = `${profile.fullName}, ${profile.role}. Maker of CalMeter, ParkSaathi and Neon Drift Zero.`;
 export const size = { width: 1200, height: 630 };
@@ -13,7 +13,7 @@ const dataUri = async (file: string, type: string) =>
 /** Share card, rendered once at build time: name and role on the left, portrait with the app icons on the right. */
 export default async function OpengraphImage() {
   const portrait = await dataUri("shubham.jpg", "image/jpeg");
-  const icons = await Promise.all(apps.map((a) => dataUri(a.icon.slice(1), "image/png")));
+  const icons = await Promise.all(featuredApps.map((a) => dataUri(a.icon.slice(1), "image/png")));
 
   return new ImageResponse(
     (

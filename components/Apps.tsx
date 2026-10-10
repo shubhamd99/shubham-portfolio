@@ -1,19 +1,21 @@
 import Image from "next/image";
-import { AppleLogo, ArrowUpRight, GooglePlayLogo } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+import { AppleLogo, ArrowRight, ArrowUpRight, GooglePlayLogo } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/Reveal";
-import { apps, type App } from "@/data/site";
+import { appsByNewest, featuredApps, type App } from "@/data/site";
 
 /** Each app tints its own panel with its brand color; the page palette stays the same. */
-const tint: Record<App["theme"], string> = {
+export const tint: Record<App["theme"], string> = {
   calmeter: "34 195 142",
   parksaathi: "92 190 140",
   neondrift: "63 200 255",
+  galacticrock: "255 146 72",
 };
 
 const statusLabel = { live: "Live", review: "In review", soon: "Coming soon" } as const;
 
 export function Apps() {
-  const [first, second, third] = apps;
+  const [first, second, third] = featuredApps;
   return (
     <section id="apps" className="mx-auto max-w-7xl px-4 py-28 sm:px-6 md:py-40">
       <Reveal className="max-w-3xl">
@@ -33,11 +35,13 @@ export function Apps() {
         <SplitPanel app={second} reverse />
         <WidePanel app={third} />
       </div>
+
+      <AllAppsLink />
     </section>
   );
 }
 
-function Panel({ app, children }: { app: App; children: React.ReactNode }) {
+export function Panel({ app, children }: { app: App; children: React.ReactNode }) {
   return (
     <Reveal>
       <article id={app.slug} className="shell" style={{ "--tint": tint[app.theme] } as React.CSSProperties}>
@@ -49,7 +53,54 @@ function Panel({ app, children }: { app: App; children: React.ReactNode }) {
   );
 }
 
-function SplitPanel({ app, reverse = false }: { app: App; reverse?: boolean }) {
+/** Home page link to /apps: every app icon, newest first, with the newest one called out. */
+function AllAppsLink() {
+  const newest = appsByNewest[0];
+  const unfeatured = appsByNewest.filter((a) => !featuredApps.includes(a)).length;
+  return (
+    <Reveal className="mt-8 md:mt-10">
+      <Link
+        href="/apps"
+        className="group shell block transition-transform duration-700 ease-fluid hover:-translate-y-1 active:scale-[0.995]"
+        style={{ "--tint": tint[newest.theme] } as React.CSSProperties}
+      >
+        <span className="core flex flex-col gap-6 overflow-hidden bg-[radial-gradient(60%_120%_at_0%_50%,rgb(var(--tint)/0.16),transparent_70%)] p-6 sm:flex-row sm:items-center sm:p-8 lg:px-10">
+          <span className="flex shrink-0 items-center">
+            {appsByNewest.map((a, i) => (
+              <Image
+                key={a.slug}
+                src={a.icon}
+                alt=""
+                width={56}
+                height={56}
+                style={{ zIndex: appsByNewest.length - i }}
+                className={`relative size-12 rounded-[0.95rem] ring-[3px] ring-core transition-transform duration-700 ease-fluid sm:size-14 ${
+                  i === 0 ? "" : "-ml-3 group-hover:translate-x-1.5"
+                }`}
+              />
+            ))}
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+              <span className="text-xl font-semibold tracking-tight sm:text-2xl">See all {appsByNewest.length} apps</span>
+              <span className="rounded-full bg-[rgb(var(--tint)/0.14)] px-2.5 py-1 font-mono text-[10px] tracking-[0.14em] text-[rgb(var(--tint))] uppercase ring-1 ring-[rgb(var(--tint)/0.3)]">
+                New · {newest.name}
+              </span>
+            </span>
+            <span className="mt-1.5 block text-muted">
+              {unfeatured > 0 ? `${unfeatured} more beyond these three, ` : ""}newest first, with screenshots and store status.
+            </span>
+          </span>
+          <span className="grid size-12 shrink-0 place-items-center self-end rounded-full bg-ink text-bg transition-transform duration-500 ease-fluid group-hover:translate-x-1 sm:self-center">
+            <ArrowRight size={18} />
+          </span>
+        </span>
+      </Link>
+    </Reveal>
+  );
+}
+
+export function SplitPanel({ app, reverse = false }: { app: App; reverse?: boolean }) {
   return (
     <Panel app={app}>
       <div className="grid items-center lg:grid-cols-2">

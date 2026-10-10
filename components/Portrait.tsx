@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { apps } from "@/data/site";
+import { featuredApps } from "@/data/site";
 
 /**
  * Circular portrait with a soft edge, a slowly spinning light arc, and the three app icons orbiting on a faint ring
@@ -37,7 +37,7 @@ export function Portrait() {
 
       {/* App icons orbiting on the track. */}
       <div aria-hidden className="absolute inset-0 motion-safe:animate-[orbit_36s_linear_infinite]">
-        {apps.map((app, i) => (
+        {featuredApps.map((app, i) => (
           <div
             key={app.slug}
             className="absolute top-1/2 left-1/2"

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { Portrait } from "@/components/Portrait";
 import { RoleCycler } from "@/components/RoleCycler";
-import { apps, profile } from "@/data/site";
+import { featuredApps, profile } from "@/data/site";
 
 export function Hero() {
   return (
@@ -53,7 +53,7 @@ export function Hero() {
               See my apps
               {/* The three app icons sit stacked and splay apart on hover. */}
               <span className="flex items-center">
-                {apps.map((a, i) => (
+                {featuredApps.map((a, i) => (
                   <Image
                     key={a.slug}
                     src={a.icon}

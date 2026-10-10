@@ -7,7 +7,7 @@ export function buildLlmsTxt() {
   const lines = [
     `# ${profile.fullName}`,
     "",
-    `> ${profile.role} at Kotak811 with 7+ years building web and mobile apps. Previously SDE-2 at Swiggy and full-stack engineer at Rigbot. Builds and ships his own apps: CalMeter, ParkSaathi and Neon Drift Zero.`,
+    `> ${profile.role} at Kotak811 with 7+ years building web and mobile apps. Previously SDE-2 at Swiggy and full-stack engineer at Rigbot. Builds and ships his own apps: Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.`,
     "",
     `- Website: ${SITE_URL}`,
     `- Email: ${profile.email}`,

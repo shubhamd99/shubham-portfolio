@@ -42,7 +42,7 @@ export function structuredData() {
         description: a.description,
         url: a.website,
         image: `${SITE_URL}${a.icon}`,
-        applicationCategory: a.theme === "neondrift" ? "GameApplication" : a.theme === "calmeter" ? "HealthApplication" : "TravelApplication",
+        applicationCategory: a.schemaCategory,
         operatingSystem: "Android, iOS",
         author: { "@id": `${SITE_URL}/#person` },
       })),

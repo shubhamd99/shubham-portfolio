@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { GithubLogo } from "@phosphor-icons/react";
 import { profile } from "@/data/site";
 
 const links = [
-  { href: "#experience", label: "Work" },
-  { href: "#apps", label: "Apps" },
-  { href: "#open-source", label: "Open source" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#experience", label: "Work" },
+  { href: "/apps", label: "Apps" },
+  { href: "/#open-source", label: "Open source" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -40,22 +41,22 @@ export function Nav() {
           aria-label="Main"
           className="flex h-14 w-full max-w-md items-center justify-between gap-2 rounded-full bg-core/70 py-1.5 pr-1.5 pl-2 shadow-[inset_0_0_0_1px_rgb(255_255_255/0.08),inset_0_1px_0_rgb(255_255_255/0.08),0_20px_40px_-20px_rgb(0_0_0/0.6)] backdrop-blur-2xl md:w-max md:max-w-none"
         >
-          <a href="#top" onClick={() => setOpen(false)} className="flex items-center gap-2.5 pr-2">
+          <Link href="/#top" onClick={() => setOpen(false)} className="flex items-center gap-2.5 pr-2">
             <span className="glass grid size-10 place-items-center rounded-full text-sm font-semibold tracking-tight">
               SD
             </span>
             <span className="font-medium tracking-tight">{profile.name}</span>
-          </a>
+          </Link>
 
           <ul className="hidden items-center md:flex">
             {links.map((l) => (
               <li key={l.href}>
-                <a
+                <Link
                   href={l.href}
                   className="rounded-full px-4 py-2.5 text-sm text-muted transition-colors duration-500 ease-fluid hover:bg-white/5 hover:text-ink"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -103,7 +104,7 @@ export function Nav() {
         <ul className="flex h-full flex-col justify-center gap-2 px-8">
           {links.map((l, i) => (
             <li key={l.href} className="overflow-hidden">
-              <a
+              <Link
                 ref={i === 0 ? firstLinkRef : undefined}
                 href={l.href}
                 onClick={() => setOpen(false)}
@@ -113,7 +114,7 @@ export function Nav() {
                 }`}
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="overflow-hidden pt-8">

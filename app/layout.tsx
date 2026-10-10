@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 const title = `${profile.fullName} | ${profile.role}`;
 const description =
-  "Senior Mobile Developer at Kotak811, previously SDE-2 at Swiggy. Builds scalable React and React Native apps. Maker of CalMeter, ParkSaathi and Neon Drift Zero.";
+  "Senior Mobile Developer at Kotak811, previously SDE-2 at Swiggy. Builds scalable React and React Native apps. Maker of Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     "CalMeter",
     "ParkSaathi",
     "Neon Drift Zero",
+    "Galactic Rock",
   ],
   category: "technology",
   alternates: { canonical: "/" },
@@ -58,7 +59,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${uncut.variable} ${geistMono.variable}`}>
+    // data-scroll-behavior: Next turns off the smooth scrolling from globals.css while it changes routes, so a new page opens at the top instead of animating there.
+    <html lang="en" data-scroll-behavior="smooth" className={`${uncut.variable} ${geistMono.variable}`}>
       <body>
         <a
           href="#main"

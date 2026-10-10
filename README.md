@@ -144,7 +144,11 @@ Each entry in `experience` has `company`, `role`, `period` ("Now", "Previously",
 ### Apps
 
 Each app in `apps` has its copy, `highlights`, `stack`, `website`, `icon`, three `screenshots` (with their real pixel
-`width` and `height`), `stores` and a `theme` (used for the panel tint in `components/Apps.tsx`).
+`width` and `height`), `stores`, a `theme` (used for the panel tint in `components/Apps.tsx`), a `started` date
+(YYYY-MM-DD) and a `schemaCategory` for the structured data.
+
+The home page shows the three `featuredApps` and links to `/apps` (`app/apps/page.tsx`), which lists every app newest
+first by `started`, on a timeline.
 
 **When an app goes live on a store**, change that store's `status`:
 
@@ -156,10 +160,9 @@ Each app in `apps` has its copy, `highlights`, `stack`, `website`, `icon`, three
 
 Fill in `url` for ParkSaathi's stores once the listings exist. `/llms.txt` updates automatically.
 
-**To add a fourth app:** add an entry to `apps`, add its images under `public/apps/<slug>/`, add a tint for its `theme`
-in `components/Apps.tsx`, and decide where it goes in the `Apps` layout (it currently places exactly three panels).
-The hero button and the orbit both render one icon per app. The orbit spaces icons 120 degrees apart, so update the
-angle in `components/Portrait.tsx`.
+**To add an app:** add an entry to `apps` with its `started` date, add its images under `public/apps/<slug>/` and a
+tint for its `theme` in `components/Apps.tsx`. It appears on `/apps` automatically. To show it on the home page instead
+of an existing one, change `featuredApps` (the home layout, hero button and orbit are built for exactly three).
 
 ### Open source
 
@@ -309,8 +312,9 @@ sips -Z 256 <icon-512>.png --out public/apps/<slug>/icon.png
 | App | Screenshots from | Icon from |
 |---|---|---|
 | CalMeter | `calmeter/playstore/screenshots-final/` | `calmeter/playstore/play-icon-512.png` |
-| ParkSaathi | `parksaathi/playstore/store-screenshots/` | `parksaathi/playstore/playstore-icon.png` |
+| ParkSaathi | `parksaathi/playstore/store-screenshots/` | `parksaathi/assets/images/icon.png` (the pin + rupee coins icon) |
 | Neon Drift Zero | `neondriftzero-game-ios/docs/store/screenshots-6.9/` | `neondriftzero-web/public/icons/icon-512.png` |
+| Galactic Rock | `orbit-jump-ios/docs/store/raw-iphone/` (05, 02, 03, resized to 552×1200) | `orbit-jump-ios/GalacticRock/Assets.xcassets/AppIcon.appiconset/AppIcon.png` |
 
 After replacing a screenshot, update its `width` and `height` in `data/site.ts` (`sips -g pixelWidth -g pixelHeight`).
 

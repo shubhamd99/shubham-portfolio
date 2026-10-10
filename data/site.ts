@@ -73,6 +73,8 @@ export type StoreStatus = "live" | "review" | "soon";
 export type App = {
   slug: string;
   name: string;
+  /** When work on it started (YYYY-MM-DD). The apps page lists newest first. */
+  started: string;
   category: string;
   tagline: string;
   description: string;
@@ -82,12 +84,43 @@ export type App = {
   icon: string;
   screenshots: { src: string; alt: string; width: number; height: number }[];
   stores: { platform: "Google Play" | "App Store"; status: StoreStatus; url: string }[];
-  theme: "calmeter" | "parksaathi" | "neondrift";
+  theme: "calmeter" | "parksaathi" | "neondrift" | "galacticrock";
+  /** schema.org applicationCategory. */
+  schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication";
 };
 
 export const apps: App[] = [
   {
+    slug: "galacticrock",
+    started: "2026-10-04",
+    name: "Galactic Rock",
+    category: "Game · Arcade",
+    tagline: "Hold to orbit. Release to fly. Climb the galaxy.",
+    description:
+      "A one-touch space arcade climber. Hold anywhere to tether your burning rock to the nearest star and swing around it, then let go to slingshot off along the tangent. Chain perfect releases to a x5 combo through endless worlds of lasers, asteroids and black holes.",
+    highlights: [
+      "Written natively twice: Kotlin with a single Jetpack Compose canvas on Android, Swift with a custom Metal renderer on iPhone and iPad",
+      "Seeded levels that always leave a way through, checked by an autopilot bot that plays full runs in the unit tests",
+      "Five worlds that loop forever, planet power-ups, and leaderboards and achievements on Play Games and Game Center",
+    ],
+    stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Metal"],
+    website: "https://galactic-rock.vercel.app",
+    icon: "/apps/galacticrock/icon.png",
+    screenshots: [
+      { src: "/apps/galacticrock/1.jpg", alt: "Galactic Rock orbiting a star past a black hole at a x5 combo", width: 552, height: 1200 },
+      { src: "/apps/galacticrock/2.jpg", alt: "Galactic Rock 5x Godlike combo between pink lasers", width: 552, height: 1200 },
+      { src: "/apps/galacticrock/3.jpg", alt: "Galactic Rock level 3, Toxic Grid, with green lasers", width: 552, height: 1200 },
+    ],
+    stores: [
+      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.galacticrock.app" },
+      { platform: "App Store", status: "soon", url: "https://apps.apple.com/app/id6821276759" },
+    ],
+    theme: "galacticrock",
+    schemaCategory: "GameApplication",
+  },
+  {
     slug: "calmeter",
+    started: "2026-09-27",
     name: "CalMeter",
     category: "Health · AI",
     tagline: "Snap your meal. Know your calories.",
@@ -108,12 +141,14 @@ export const apps: App[] = [
     ],
     stores: [
       { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
-      { platform: "App Store", status: "review", url: "https://apps.apple.com/app/id6817736047" },
+      { platform: "App Store", status: "soon", url: "https://apps.apple.com/app/id6817736047" },
     ],
     theme: "calmeter",
+    schemaCategory: "HealthApplication",
   },
   {
     slug: "parksaathi",
+    started: "2026-09-22",
     name: "ParkSaathi",
     category: "Marketplace · Mobility",
     tagline: "Park stress-free. Earn from empty space.",
@@ -137,9 +172,11 @@ export const apps: App[] = [
       { platform: "App Store", status: "soon", url: "" },
     ],
     theme: "parksaathi",
+    schemaCategory: "TravelApplication",
   },
   {
     slug: "neondrift",
+    started: "2026-09-25",
     name: "Neon Drift Zero",
     category: "Game · Arcade",
     tagline: "Dodge an endless storm of neon cubes. One hit ends it.",
@@ -163,8 +200,17 @@ export const apps: App[] = [
       { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6817610594" },
     ],
     theme: "neondrift",
+    schemaCategory: "GameApplication",
   },
 ];
+
+/** Every app, newest first (the order of the apps page). */
+export const appsByNewest = [...apps].sort((a, b) => b.started.localeCompare(a.started));
+
+/** The three apps the home page shows, in its order. The rest are on /apps. */
+export const featuredApps = (["calmeter", "parksaathi", "neondrift"] as const).map(
+  (slug) => apps.find((a) => a.slug === slug)!,
+);
 
 export const npmModules = [
   {
