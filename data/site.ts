@@ -163,9 +163,9 @@ export const apps: App[] = [
     website: "https://parksaathi.app",
     icon: "/apps/parksaathi/icon.png",
     screenshots: [
-      { src: "/apps/parksaathi/1.jpg", alt: "ParkSaathi list of verified parking spots nearby", width: 670, height: 1200 },
-      { src: "/apps/parksaathi/2.jpg", alt: "ParkSaathi parking spot details", width: 670, height: 1200 },
-      { src: "/apps/parksaathi/3.jpg", alt: "ParkSaathi host earnings screen", width: 670, height: 1200 },
+      { src: "/apps/parksaathi/1.jpg", alt: "ParkSaathi list of verified parking spots nearby", width: 675, height: 1200 },
+      { src: "/apps/parksaathi/2.jpg", alt: "ParkSaathi parking spot details with photos and ratings", width: 675, height: 1200 },
+      { src: "/apps/parksaathi/3.jpg", alt: "ParkSaathi account screen with daily and weekly host earnings", width: 675, height: 1200 },
     ],
     stores: [
       { platform: "Google Play", status: "soon", url: "" },
