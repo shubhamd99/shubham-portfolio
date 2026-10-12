@@ -1,6 +1,6 @@
 import { SITE_URL, apps, experience, githubProjects, npmModules, profile } from "@/data/site";
 
-const statusText = { live: "available", review: "in App Store review", soon: "coming soon" } as const;
+const statusText = { live: "available", review: "in store review", soon: "coming soon" } as const;
 
 /** Plain-text summary of the site for LLMs and AI assistants (https://llmstxt.org). Built from the same data as the page. */
 export function buildLlmsTxt() {

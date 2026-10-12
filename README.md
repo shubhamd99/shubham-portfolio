@@ -158,7 +158,7 @@ first by `started`, on a timeline.
 | `"review"` | Outline pill, "In review" | None |
 | `"soon"` | Outline pill, "Coming soon" | None |
 
-Fill in `url` for ParkSaathi's stores once the listings exist. `/llms.txt` updates automatically.
+Fill in `url` for ParkSaathi's App Store listing once it exists. `/llms.txt` updates automatically.
 
 **To add an app:** add an entry to `apps` with its `started` date, add its images under `public/apps/<slug>/` and a
 tint for its `theme` in `components/Apps.tsx`. It appears on `/apps` automatically. To show it on the home page instead

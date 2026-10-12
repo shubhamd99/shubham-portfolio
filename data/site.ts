@@ -127,11 +127,12 @@ export const apps: App[] = [
     description:
       "An AI calorie tracker for every cuisine. Photograph a meal, confirm the foods in a tap, and see calories and macros against your daily goal. Recognition runs on the phone where it can, and photos are never stored.",
     highlights: [
+      "Written natively twice: Kotlin + Jetpack Compose on Android, Swift + SwiftUI on iPhone",
       "On-device food recognition with Gemini Nano and Apple Foundation Models, with a cloud fallback",
-      "Offline food catalog with full-text search in encrypted SQLite",
+      "Offline food catalog of 10,000 foods with full-text search, and an encrypted on-device cache",
       "Calories, protein, carbs and fat at a glance, plus streaks and progress",
     ],
-    stack: ["React Native", "Expo", "Native modules", "Supabase", "Gemini"],
+    stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Supabase", "Gemini"],
     website: "https://calmeter.app",
     icon: "/apps/calmeter/icon.png",
     screenshots: [
@@ -140,8 +141,8 @@ export const apps: App[] = [
       { src: "/apps/calmeter/3.jpg", alt: "CalMeter weekly progress chart", width: 675, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
-      { platform: "App Store", status: "soon", url: "https://apps.apple.com/app/id6817736047" },
+      { platform: "Google Play", status: "review", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
+      { platform: "App Store", status: "review", url: "https://apps.apple.com/app/id6817736047" },
     ],
     theme: "calmeter",
     schemaCategory: "HealthApplication",
@@ -168,7 +169,7 @@ export const apps: App[] = [
       { src: "/apps/parksaathi/3.jpg", alt: "ParkSaathi account screen with daily and weekly host earnings", width: 675, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.parksaathi.app" },
       { platform: "App Store", status: "soon", url: "" },
     ],
     theme: "parksaathi",
@@ -196,7 +197,7 @@ export const apps: App[] = [
       { src: "/apps/neondrift/3.jpg", alt: "Neon Drift Zero level 3, Solar Rush", width: 552, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.neondriftzero.app" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.neondriftzero.app" },
       { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6817610594" },
     ],
     theme: "neondrift",
