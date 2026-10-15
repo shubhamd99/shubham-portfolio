@@ -141,7 +141,7 @@ export const apps: App[] = [
       { src: "/apps/calmeter/3.jpg", alt: "CalMeter weekly progress chart", width: 675, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "review", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
       { platform: "App Store", status: "review", url: "https://apps.apple.com/app/id6817736047" },
     ],
     theme: "calmeter",
