@@ -10,6 +10,7 @@ export const tint: Record<App["theme"], string> = {
   parksaathi: "92 190 140",
   neondrift: "63 200 255",
   galacticrock: "255 146 72",
+  lumiflit: "170 230 110",
 };
 
 const statusLabel = { live: "Live", review: "In review", soon: "Coming soon" } as const;

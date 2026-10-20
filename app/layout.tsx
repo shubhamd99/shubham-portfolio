@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 const title = `${profile.fullName} | ${profile.role}`;
 const description =
-  "Senior Mobile Developer at Kotak811, previously SDE-2 at Swiggy. Builds scalable React and React Native apps. Maker of Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.";
+  "Senior Mobile Developer at Kotak811, previously SDE-2 at Swiggy. Builds scalable React and React Native apps. Maker of Lumiflit, Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -42,6 +42,7 @@ export const metadata: Metadata = {
     "ParkSaathi",
     "Neon Drift Zero",
     "Galactic Rock",
+    "Lumiflit",
   ],
   category: "technology",
   alternates: { canonical: "/" },

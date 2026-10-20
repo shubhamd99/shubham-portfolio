@@ -84,12 +84,40 @@ export type App = {
   icon: string;
   screenshots: { src: string; alt: string; width: number; height: number }[];
   stores: { platform: "Google Play" | "App Store"; status: StoreStatus; url: string }[];
-  theme: "calmeter" | "parksaathi" | "neondrift" | "galacticrock";
+  theme: "calmeter" | "parksaathi" | "neondrift" | "galacticrock" | "lumiflit";
   /** schema.org applicationCategory. */
   schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication";
 };
 
 export const apps: App[] = [
+  {
+    slug: "lumiflit",
+    started: "2026-10-17",
+    name: "Lumiflit",
+    category: "Game · Arcade",
+    tagline: "Tap to glow. Drift through a moonlit forest.",
+    description:
+      "A calm one-tap arcade game. Tap to lift a glowing firefly through a moonlit forest, between vines strung with paper lanterns. Six painted forests, each with its own music, a new one every 20 points, medals up to the Moon, and firefly colours to unlock. No ads, and it works offline.",
+    highlights: [
+      "Written natively twice: Kotlin with Jetpack Compose menus and a hardware-canvas renderer on its own thread on Android, Swift with SpriteKit on Metal and SwiftUI on iPhone and iPad",
+      "A fixed 120 Hz physics step in pure Kotlin and pure Swift engines, checked against shared fixtures so both platforms play the same, bit for bit",
+      "Six forests with their own music and pillars, unlockable firefly colours, and leaderboards and achievements on Play Games and Game Center",
+    ],
+    stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "SpriteKit"],
+    website: "https://lumiflit.vercel.app",
+    icon: "/apps/lumiflit/icon.png",
+    screenshots: [
+      { src: "/apps/lumiflit/1.jpg", alt: "Lumiflit home screen with the glowing firefly in a misty forest", width: 552, height: 1200 },
+      { src: "/apps/lumiflit/2.jpg", alt: "Lumiflit firefly flying past a full moon over a lake at a score of 50", width: 552, height: 1200 },
+      { src: "/apps/lumiflit/3.jpg", alt: "Lumiflit purple forest with shooting stars at a score of 92", width: 552, height: 1200 },
+    ],
+    stores: [
+      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.lumiflit.app" },
+      { platform: "App Store", status: "soon", url: "https://apps.apple.com/app/id6824343928" },
+    ],
+    theme: "lumiflit",
+    schemaCategory: "GameApplication",
+  },
   {
     slug: "galacticrock",
     started: "2026-10-04",
