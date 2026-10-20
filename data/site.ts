@@ -113,7 +113,7 @@ export const apps: App[] = [
     ],
     stores: [
       { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.galacticrock.app" },
-      { platform: "App Store", status: "soon", url: "https://apps.apple.com/app/id6821276759" },
+      { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6821276759" },
     ],
     theme: "galacticrock",
     schemaCategory: "GameApplication",
