@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { Portrait } from "@/components/Portrait";
 import { RoleCycler } from "@/components/RoleCycler";
-import { featuredApps, profile } from "@/data/site";
+import { appsByNewest, profile } from "@/data/site";
 
 export function Hero() {
   return (
@@ -51,17 +51,18 @@ export function Hero() {
               className="group inline-flex h-14 items-center gap-4 glass rounded-full pr-2 pl-6 font-medium whitespace-nowrap transition-all duration-500 ease-fluid hover:bg-white/5 active:scale-[0.98]"
             >
               See my apps
-              {/* The three app icons sit stacked and splay apart on hover. */}
+              {/* Every app icon sits stacked and fans out from the middle on hover (--i is the offset from center). */}
               <span className="flex items-center">
-                {featuredApps.map((a, i) => (
+                {appsByNewest.map((a, i) => (
                   <Image
                     key={a.slug}
                     src={a.icon}
                     alt=""
                     width={40}
                     height={40}
-                    className={`relative size-10 rounded-[0.75rem] ring-[3px] ring-bg transition-transform duration-500 ease-fluid ${
-                      ["group-hover:-translate-x-1 group-hover:-rotate-8", "-ml-2.5 group-hover:-translate-y-1", "-ml-2.5 group-hover:translate-x-1 group-hover:rotate-8"][i]
+                    style={{ "--i": i - (appsByNewest.length - 1) / 2 } as React.CSSProperties}
+                    className={`relative size-10 rounded-[0.75rem] ring-[3px] ring-bg transition-transform duration-500 ease-fluid group-hover:translate-x-[calc(var(--i)*0.25rem)] group-hover:rotate-[calc(var(--i)*5deg)] ${
+                      i > 0 ? "-ml-2.5" : ""
                     }`}
                   />
                 ))}

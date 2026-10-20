@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { featuredApps } from "@/data/site";
+import { appsByNewest } from "@/data/site";
 
 /**
- * Circular portrait with a soft edge, a slowly spinning light arc, and the three app icons orbiting on a faint ring
+ * Circular portrait with a soft edge, a slowly spinning light arc, and every app icon orbiting on a faint ring
  * (each icon counter-rotates so it stays upright). CSS-only; everything stops under reduced motion.
  */
 export function Portrait() {
@@ -37,24 +37,27 @@ export function Portrait() {
 
       {/* App icons orbiting on the track. */}
       <div aria-hidden className="absolute inset-0 motion-safe:animate-[orbit_36s_linear_infinite]">
-        {featuredApps.map((app, i) => (
-          <div
-            key={app.slug}
-            className="absolute top-1/2 left-1/2"
-            style={{ transform: `rotate(${i * 120 - 60}deg) translateX(var(--r)) rotate(${60 - i * 120}deg)` }}
-          >
-            {/* Centered on the orbit point with `translate`, so the counter-spin (a `transform`) turns it about its own center. */}
-            <div className="h-9 w-9 -translate-x-1/2 -translate-y-1/2 lg:h-11 lg:w-11 motion-safe:animate-[orbit_36s_linear_infinite_reverse]">
-              <Image
-                src={app.icon}
-                alt=""
-                width={44}
-                height={44}
-                className="size-full rounded-[28%] object-cover shadow-[0_10px_30px_-8px_rgb(0_0_0/0.8)] ring-1 ring-white/15"
-              />
+        {appsByNewest.map((app, i) => {
+          const angle = (i * 360) / appsByNewest.length - 60;
+          return (
+            <div
+              key={app.slug}
+              className="absolute top-1/2 left-1/2"
+              style={{ transform: `rotate(${angle}deg) translateX(var(--r)) rotate(${-angle}deg)` }}
+            >
+              {/* Centered on the orbit point with `translate`, so the counter-spin (a `transform`) turns it about its own center. */}
+              <div className="h-9 w-9 -translate-x-1/2 -translate-y-1/2 lg:h-11 lg:w-11 motion-safe:animate-[orbit_36s_linear_infinite_reverse]">
+                <Image
+                  src={app.icon}
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="size-full rounded-[28%] object-cover shadow-[0_10px_30px_-8px_rgb(0_0_0/0.8)] ring-1 ring-white/15"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

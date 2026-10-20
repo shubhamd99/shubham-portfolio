@@ -184,11 +184,11 @@ export const apps: App[] = [
     description:
       "A peer-to-peer parking marketplace for India. Neighbours list their spare driveway or society slot, drivers find a verified spot nearby, book it, and pay the host directly by UPI on arrival. Launching first in Bengaluru.",
     highlights: [
-      "One app for both drivers and hosts, in English and Hindi",
-      "Map search over PostGIS with vehicle-size filters, from two-wheelers to SUVs",
+      "Rebuilt natively from React Native: Kotlin and Jetpack Compose on Android, keeping the same package, backend and Play listing",
+      "One app for both drivers and hosts, in English and Hindi, with map search over PostGIS and vehicle-size filters",
       "Hand-verified hosts and listings, booking requests and push notifications",
     ],
-    stack: ["React Native", "Expo", "Supabase", "PostGIS", "Firebase"],
+    stack: ["Kotlin", "Jetpack Compose", "Supabase", "PostGIS", "Firebase"],
     website: "https://parksaathi.app",
     icon: "/apps/parksaathi/icon.png",
     screenshots: [
