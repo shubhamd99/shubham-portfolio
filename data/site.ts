@@ -112,7 +112,7 @@ export const apps: App[] = [
       { src: "/apps/galacticrock/3.jpg", alt: "Galactic Rock level 3, Toxic Grid, with green lasers", width: 552, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.galacticrock.app" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.galacticrock.app" },
       { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6821276759" },
     ],
     theme: "galacticrock",
