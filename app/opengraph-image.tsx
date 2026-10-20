@@ -1,9 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { featuredApps, profile } from "@/data/site";
+import { appsByNewest, profile } from "@/data/site";
 
-export const alt = `${profile.fullName}, ${profile.role}. Maker of CalMeter, ParkSaathi and Neon Drift Zero.`;
+export const alt = `${profile.fullName}, ${profile.role}. Maker of Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -13,7 +13,7 @@ const dataUri = async (file: string, type: string) =>
 /** Share card, rendered once at build time: name and role on the left, portrait with the app icons on the right. */
 export default async function OpengraphImage() {
   const portrait = await dataUri("shubham.jpg", "image/jpeg");
-  const icons = await Promise.all(featuredApps.map((a) => dataUri(a.icon.slice(1), "image/png")));
+  const icons = await Promise.all(appsByNewest.map((a) => dataUri(a.icon.slice(1), "image/png")));
 
   return new ImageResponse(
     (
@@ -59,7 +59,7 @@ export default async function OpengraphImage() {
                
               <img key={src.slice(-24)} src={src} width={64} height={64} style={{ borderRadius: 16 }} alt="" />
             ))}
-            <div style={{ display: "flex", marginLeft: 10, fontSize: 26, color: "#8f99ad" }}>3 apps, built end to end</div>
+            <div style={{ display: "flex", marginLeft: 10, fontSize: 26, color: "#8f99ad" }}>5+ apps, built end to end</div>
           </div>
         </div>
 
