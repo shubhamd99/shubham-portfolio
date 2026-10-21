@@ -311,11 +311,12 @@ sips -Z 256 <icon-512>.png --out public/apps/<slug>/icon.png
 
 | App | Screenshots from | Icon from |
 |---|---|---|
-| CalMeter | `calmeter/playstore/screenshots-final/` | `calmeter/playstore/play-icon-512.png` |
+| CalMeter | `calmeter-app/playstore/screenshots-final/` | `calmeter-app/playstore/play-icon-512.png` |
 | ParkSaathi | `parksaathi/playstore/store-screenshots/` | `parksaathi/assets/images/icon.png` (the pin + rupee coins icon) |
 | Neon Drift Zero | `neondriftzero-game-ios/docs/store/screenshots-6.9/` | `neondriftzero-web/public/icons/icon-512.png` |
 | Galactic Rock | `orbit-jump-ios/docs/store/raw-iphone/` (05, 02, 03, resized to 552×1200) | `orbit-jump-ios/GalacticRock/Assets.xcassets/AppIcon.appiconset/AppIcon.png` |
 | Lumiflit | `lumiflit-game/store/screenshots/raw-iphone/` (01-home, 04-forest3-a, 06-forest5-a) | `lumiflit-game/ios/Lumiflit/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` |
+| Ondora | `ondora-app/docs/store/captures/` (home, ask, vault `_phone_light`) | `ondora-app/docs/store/icon-512.png` |
 
 After replacing a screenshot, update its `width` and `height` in `data/site.ts` (`sips -g pixelWidth -g pixelHeight`).
 

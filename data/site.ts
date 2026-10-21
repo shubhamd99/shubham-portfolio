@@ -84,12 +84,40 @@ export type App = {
   icon: string;
   screenshots: { src: string; alt: string; width: number; height: number }[];
   stores: { platform: "Google Play" | "App Store"; status: StoreStatus; url: string }[];
-  theme: "calmeter" | "parksaathi" | "neondrift" | "galacticrock" | "lumiflit";
+  theme: "calmeter" | "parksaathi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora";
   /** schema.org applicationCategory. */
-  schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication";
+  schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication" | "UtilitiesApplication";
 };
 
 export const apps: App[] = [
+  {
+    slug: "ondora",
+    started: "2026-10-20",
+    name: "Ondora",
+    category: "Productivity · Documents",
+    tagline: "Everything important. Nothing uploaded.",
+    description:
+      "A privacy-first document vault. Ondora finds IDs, passports, insurance policies, bills, tickets, warranties and prescriptions in your photo gallery, keeps them in an encrypted vault by category and family member, pulls out expiry dates and policy numbers, and reminds you before anything runs out. No account, no cloud, and the app has no internet permission.",
+    highlights: [
+      "Native Android in Kotlin and Jetpack Compose: on-device OCR with ML Kit and rule-based extractors for dates, passport MRZ, amounts and PNRs across 18 document categories",
+      "A fully offline Private AI (Qwen3.5 0.8B through llama.cpp, built from source with the NDK) that summarizes documents and answers questions with the source page",
+      "Encrypted vault with Room, SQLCipher and Tink, local reminders, claim-pack PDFs with redaction, and password-protected backups",
+    ],
+    stack: ["Kotlin", "Jetpack Compose", "ML Kit", "llama.cpp", "SQLCipher"],
+    website: "https://ondora-sooty.vercel.app",
+    icon: "/apps/ondora/icon.png",
+    screenshots: [
+      { src: "/apps/ondora/1.jpg", alt: "Ondora home screen with a car insurance renewal countdown and a wallet of documents", width: 539, height: 1200 },
+      { src: "/apps/ondora/2.jpg", alt: "Ondora Ask screen answering questions about a car claim and a passport, offline", width: 539, height: 1200 },
+      { src: "/apps/ondora/3.jpg", alt: "Ondora vault sorted into IDs, insurance, health, travel, bills and warranties", width: 539, height: 1200 },
+    ],
+    stores: [
+      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.ondora.app" },
+      { platform: "App Store", status: "soon", url: "https://apps.apple.com" },
+    ],
+    theme: "ondora",
+    schemaCategory: "UtilitiesApplication",
+  },
   {
     slug: "lumiflit",
     started: "2026-10-17",

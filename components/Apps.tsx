@@ -11,6 +11,7 @@ export const tint: Record<App["theme"], string> = {
   neondrift: "63 200 255",
   galacticrock: "255 146 72",
   lumiflit: "170 230 110",
+  ondora: "47 91 255",
 };
 
 const statusLabel = { live: "Live", review: "In review", soon: "Coming soon" } as const;

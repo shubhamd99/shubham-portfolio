@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { appsByNewest, profile } from "@/data/site";
 
-export const alt = `${profile.fullName}, ${profile.role}. Maker of Lumiflit, Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.`;
+export const alt = `${profile.fullName}, ${profile.role}. Maker of Ondora, Lumiflit, Galactic Rock, CalMeter, ParkSaathi and Neon Drift Zero.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,12 +54,12 @@ export default async function OpengraphImage() {
           <div style={{ display: "flex", marginTop: 14, fontSize: 42, fontWeight: 700, letterSpacing: -1.5, color: "#7d889e", whiteSpace: "nowrap" }}>
             Mobile and frontend engineer.
           </div>
-          <div style={{ display: "flex", alignItems: "center", marginTop: 46, gap: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", marginTop: 46, gap: 10 }}>
             {icons.map((src) => (
                
-              <img key={src.slice(-24)} src={src} width={56} height={56} style={{ borderRadius: 14 }} alt="" />
+              <img key={src.slice(-24)} src={src} width={48} height={48} style={{ borderRadius: 12 }} alt="" />
             ))}
-            <div style={{ display: "flex", marginLeft: 10, fontSize: 23, color: "#8f99ad", whiteSpace: "nowrap" }}>5+ apps on the App Store &amp; Play</div>
+            <div style={{ display: "flex", marginLeft: 10, fontSize: 22, color: "#8f99ad", whiteSpace: "nowrap" }}>5+ apps on the App Store &amp; Play</div>
           </div>
         </div>
 
