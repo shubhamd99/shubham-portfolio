@@ -1,7 +1,7 @@
 # Shubham Dhage: portfolio
 
 Personal site of **Shubham Dhage**, Senior Mobile Developer at Kotak811, and the home of the three apps he builds and
-runs end to end: **CalMeter**, **ParkSaathi** and **Neon Drift Zero**.
+runs end to end: **KcalRing**, **ParkSaathi** and **Neon Drift Zero**.
 
 **Live:** [shubhamdhage.in](https://shubhamdhage.in)
 
@@ -311,7 +311,7 @@ sips -Z 256 <icon-512>.png --out public/apps/<slug>/icon.png
 
 | App | Screenshots from | Icon from |
 |---|---|---|
-| CalMeter | `calmeter-app/playstore/screenshots-final/` | `calmeter-app/playstore/play-icon-512.png` |
+| KcalRing | `kcalring-app/playstore/screenshots-final/` | `kcalring-app/playstore/play-icon-512.png` |
 | ParkSaathi | `parksaathi/playstore/store-screenshots/` | `parksaathi/assets/images/icon.png` (the pin + rupee coins icon) |
 | Neon Drift Zero | `neondriftzero-game-ios/docs/store/screenshots-6.9/` | `neondriftzero-web/public/icons/icon-512.png` |
 | Galactic Rock | `orbit-jump-ios/docs/store/raw-iphone/` (05, 02, 03, resized to 552×1200) | `orbit-jump-ios/GalacticRock/Assets.xcassets/AppIcon.appiconset/AppIcon.png` |

@@ -177,7 +177,7 @@ export const apps: App[] = [
   {
     slug: "calmeter",
     started: "2026-09-27",
-    name: "CalMeter",
+    name: "KcalRing",
     category: "Health · AI",
     tagline: "Snap your meal. Know your calories.",
     description:
@@ -189,12 +189,12 @@ export const apps: App[] = [
       "Calories, protein, carbs and fat at a glance, plus streaks and progress",
     ],
     stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "Supabase", "Gemini"],
-    website: "https://calmeter.app",
+    website: "https://kcalring.vercel.app",
     icon: "/apps/calmeter/icon.png",
     screenshots: [
-      { src: "/apps/calmeter/1.jpg", alt: "CalMeter today screen with calorie ring and meals", width: 675, height: 1200 },
-      { src: "/apps/calmeter/2.jpg", alt: "CalMeter scanning a meal with the camera", width: 675, height: 1200 },
-      { src: "/apps/calmeter/3.jpg", alt: "CalMeter weekly progress chart", width: 675, height: 1200 },
+      { src: "/apps/calmeter/1.jpg", alt: "KcalRing today screen with calorie ring and meals", width: 675, height: 1200 },
+      { src: "/apps/calmeter/2.jpg", alt: "KcalRing scanning a meal with the camera", width: 675, height: 1200 },
+      { src: "/apps/calmeter/3.jpg", alt: "KcalRing weekly progress chart", width: 675, height: 1200 },
     ],
     stores: [
       { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
