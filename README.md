@@ -1,7 +1,7 @@
 # Shubham Dhage: portfolio
 
 Personal site of **Shubham Dhage**, Senior Mobile Developer at Kotak811, and the home of the three apps he builds and
-runs end to end: **KcalRing**, **ParkSaathi** and **Neon Drift Zero**.
+runs end to end: **KcalRing**, **ParkSaarthi** and **Neon Drift Zero**.
 
 **Live:** [shubhamdhage.in](https://shubhamdhage.in)
 
@@ -119,7 +119,7 @@ little JavaScript.
 | About | `#about` | `About` | Bio, facts, stack chips |
 | Contact | `#contact` | `Contact` | Email copy button and footer |
 
-Each app panel also has its own anchor (`#calmeter`, `#parksaathi`, `#neondrift`). The old `/about` route
+Each app panel also has its own anchor (`#calmeter`, `#parksaarthi`, `#neondrift`). The old `/about` route
 permanently redirects to `/#about` (`next.config.ts`).
 
 ## Editing content
@@ -158,7 +158,7 @@ first by `started`, on a timeline.
 | `"review"` | Outline pill, "In review" | None |
 | `"soon"` | Outline pill, "Coming soon" | None |
 
-Fill in `url` for ParkSaathi's App Store listing once it exists. `/llms.txt` updates automatically.
+Fill in `url` for ParkSaarthi's App Store listing once it exists. `/llms.txt` updates automatically.
 
 **To add an app:** add an entry to `apps` with its `started` date, add its images under `public/apps/<slug>/` and a
 tint for its `theme` in `components/Apps.tsx`. It appears on `/apps` automatically. To show it on the home page instead
@@ -312,7 +312,7 @@ sips -Z 256 <icon-512>.png --out public/apps/<slug>/icon.png
 | App | Screenshots from | Icon from |
 |---|---|---|
 | KcalRing | `kcalring-app/playstore/screenshots-final/` | `kcalring-app/playstore/play-icon-512.png` |
-| ParkSaathi | `parksaathi/playstore/store-screenshots/` | `parksaathi/assets/images/icon.png` (the pin + rupee coins icon) |
+| ParkSaarthi | `parksaathi/playstore/store-screenshots/` | `parksaathi/assets/images/icon.png` (the pin + rupee coins icon) |
 | Neon Drift Zero | `neondriftzero-game-ios/docs/store/screenshots-6.9/` | `neondriftzero-web/public/icons/icon-512.png` |
 | Galactic Rock | `orbit-jump-ios/docs/store/raw-iphone/` (05, 02, 03, resized to 552×1200) | `orbit-jump-ios/GalacticRock/Assets.xcassets/AppIcon.appiconset/AppIcon.png` |
 | Lumiflit | `lumiflit-game/store/screenshots/raw-iphone/` (01-home, 04-forest3-a, 06-forest5-a) | `lumiflit-game/ios/Lumiflit/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` |

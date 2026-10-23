@@ -7,7 +7,7 @@ import { appsByNewest, featuredApps, type App } from "@/data/site";
 /** Each app tints its own panel with its brand color; the page palette stays the same. */
 export const tint: Record<App["theme"], string> = {
   calmeter: "34 195 142",
-  parksaathi: "92 190 140",
+  parksaarthi: "92 190 140",
   neondrift: "63 200 255",
   galacticrock: "255 146 72",
   lumiflit: "170 230 110",

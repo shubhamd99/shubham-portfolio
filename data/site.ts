@@ -84,7 +84,7 @@ export type App = {
   icon: string;
   screenshots: { src: string; alt: string; width: number; height: number }[];
   stores: { platform: "Google Play" | "App Store"; status: StoreStatus; url: string }[];
-  theme: "calmeter" | "parksaathi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora";
+  theme: "calmeter" | "parksaarthi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora";
   /** schema.org applicationCategory. */
   schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication" | "UtilitiesApplication";
 };
@@ -204,9 +204,9 @@ export const apps: App[] = [
     schemaCategory: "HealthApplication",
   },
   {
-    slug: "parksaathi",
+    slug: "parksaarthi",
     started: "2026-09-22",
-    name: "ParkSaathi",
+    name: "ParkSaarthi",
     category: "Marketplace · Mobility",
     tagline: "Park stress-free. Earn from empty space.",
     description:
@@ -217,18 +217,18 @@ export const apps: App[] = [
       "Hand-verified hosts and listings, booking requests and push notifications",
     ],
     stack: ["Kotlin", "Jetpack Compose", "Supabase", "PostGIS", "Firebase"],
-    website: "https://parksaathi.app",
-    icon: "/apps/parksaathi/icon.png",
+    website: "https://parksaarthi.vercel.app",
+    icon: "/apps/parksaarthi/icon.png",
     screenshots: [
-      { src: "/apps/parksaathi/1.jpg", alt: "ParkSaathi list of verified parking spots nearby", width: 675, height: 1200 },
-      { src: "/apps/parksaathi/2.jpg", alt: "ParkSaathi parking spot details with photos and ratings", width: 675, height: 1200 },
-      { src: "/apps/parksaathi/3.jpg", alt: "ParkSaathi account screen with daily and weekly host earnings", width: 675, height: 1200 },
+      { src: "/apps/parksaarthi/1.jpg", alt: "ParkSaarthi list of verified parking spots nearby", width: 675, height: 1200 },
+      { src: "/apps/parksaarthi/2.jpg", alt: "ParkSaarthi parking spot details with photos and ratings", width: 675, height: 1200 },
+      { src: "/apps/parksaarthi/3.jpg", alt: "ParkSaarthi account screen with daily and weekly host earnings", width: 675, height: 1200 },
     ],
     stores: [
       { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.parksaathi.app" },
       { platform: "App Store", status: "soon", url: "" },
     ],
-    theme: "parksaathi",
+    theme: "parksaarthi",
     schemaCategory: "TravelApplication",
   },
   {
@@ -265,7 +265,7 @@ export const apps: App[] = [
 export const appsByNewest = [...apps].sort((a, b) => b.started.localeCompare(a.started));
 
 /** The three apps the home page shows, in its order. The rest are on /apps. */
-export const featuredApps = (["calmeter", "parksaathi", "neondrift"] as const).map(
+export const featuredApps = (["calmeter", "parksaarthi", "neondrift"] as const).map(
   (slug) => apps.find((a) => a.slug === slug)!,
 );
 
