@@ -37,13 +37,14 @@ export function structuredData() {
         mainEntity: { "@id": `${SITE_URL}/#person` },
       },
       ...apps.map((a) => ({
-        "@type": "MobileApplication",
+        // An app with no store listings is a web app.
+        "@type": a.stores.length ? "MobileApplication" : "WebApplication",
         name: a.name,
         description: a.description,
         url: a.website,
         image: `${SITE_URL}${a.icon}`,
         applicationCategory: a.schemaCategory,
-        operatingSystem: "Android, iOS",
+        operatingSystem: a.stores.length ? "Android, iOS" : "Web",
         author: { "@id": `${SITE_URL}/#person` },
       })),
     ],

@@ -84,12 +84,37 @@ export type App = {
   icon: string;
   screenshots: { src: string; alt: string; width: number; height: number }[];
   stores: { platform: "Google Play" | "App Store"; status: StoreStatus; url: string }[];
-  theme: "calmeter" | "parksaarthi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora";
+  theme: "calmeter" | "parksaarthi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora" | "answerkin";
   /** schema.org applicationCategory. */
-  schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication" | "UtilitiesApplication";
+  schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication" | "UtilitiesApplication" | "BusinessApplication";
 };
 
 export const apps: App[] = [
+  {
+    slug: "answerkin",
+    started: "2026-10-24",
+    name: "Answerkin",
+    category: "Web · SEO & AI",
+    tagline: "Is AI recommending you, or your competitor?",
+    description:
+      "An SEO and AI visibility tracker for small businesses, from $12 a month. Every week Answerkin asks Gemini your customers' real questions, checks whether the answers name and cite your brand or your competitors, audits your website's SEO, and suggests what to fix.",
+    highlights: [
+      "Weekly Gemini checks with Google Search grounding, run twice per question, scored into one Findability score with share of voice and the sources Gemini cites",
+      "Supabase backend with row-level security, pgmq job queues, pg_cron and Edge Functions; plan limits enforced by database triggers",
+      "SEO audits with PageSpeed, Search Console and Analytics, a static Next.js site on Cloudflare Pages, and billing through Dodo Payments",
+    ],
+    stack: ["Next.js", "React", "Tailwind CSS", "Supabase", "Gemini"],
+    website: "https://answerkin.com",
+    icon: "/apps/answerkin/icon.png",
+    screenshots: [
+      { src: "/apps/answerkin/1.jpg", alt: "Answerkin landing page asking whether AI recommends you or your competitor, with an example Gemini report", width: 1200, height: 750 },
+      { src: "/apps/answerkin/2.jpg", alt: "Answerkin overview with a Findability score of 67 out of 100 and this week's share of voice in Gemini", width: 1200, height: 750 },
+      { src: "/apps/answerkin/3.jpg", alt: "Answerkin AI questions screen listing tracked questions and what Gemini said about one", width: 1200, height: 750 },
+    ],
+    stores: [],
+    theme: "answerkin",
+    schemaCategory: "BusinessApplication",
+  },
   {
     slug: "ondora",
     started: "2026-10-20",

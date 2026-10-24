@@ -317,6 +317,7 @@ sips -Z 256 <icon-512>.png --out public/apps/<slug>/icon.png
 | Galactic Rock | `orbit-jump-ios/docs/store/raw-iphone/` (05, 02, 03, resized to 552×1200) | `orbit-jump-ios/GalacticRock/Assets.xcassets/AppIcon.appiconset/AppIcon.png` |
 | Lumiflit | `lumiflit-game/store/screenshots/raw-iphone/` (01-home, 04-forest3-a, 06-forest5-a) | `lumiflit-game/ios/Lumiflit/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` |
 | Ondora | `ondora-app/docs/store/captures/` (home, ask, vault `_phone_light`) | `ondora-app/docs/store/icon-512.png` |
+| Answerkin | `answerkin/docs/screenshots/light/desktop/` (07-landing, 01-overview, 02-ai-visibility; full-page captures, top cropped to 16:10 and resized to 1200×750) | `answerkin/web/app/icon.svg`, drawn full bleed at 512px with Pillow, then 256px |
 
 After replacing a screenshot, update its `width` and `height` in `data/site.ts` (`sips -g pixelWidth -g pixelHeight`).
 

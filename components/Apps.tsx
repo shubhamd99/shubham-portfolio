@@ -12,6 +12,7 @@ export const tint: Record<App["theme"], string> = {
   galacticrock: "255 146 72",
   lumiflit: "170 230 110",
   ondora: "47 91 255",
+  answerkin: "215 255 58",
 };
 
 const statusLabel = { live: "Live", review: "In review", soon: "Coming soon" } as const;
@@ -103,6 +104,7 @@ function AllAppsLink() {
 }
 
 export function SplitPanel({ app, reverse = false }: { app: App; reverse?: boolean }) {
+  if (app.screenshots[0].width > app.screenshots[0].height) return <WebPanel app={app} />;
   return (
     <Panel app={app}>
       <div className="grid items-center lg:grid-cols-2">
@@ -277,5 +279,49 @@ function Fan({ app }: { app: App }) {
         ))}
       </div>
     </>
+  );
+}
+
+/** Web apps: wide screenshots need the full panel width, so the text sits on top and the screenshots below. */
+function WebPanel({ app }: { app: App }) {
+  const [a, b, c] = app.screenshots;
+  const img = "h-auto w-full rounded-[1rem] ring-1 ring-white/10 shadow-[0_40px_80px_-30px_rgb(0_0_0/0.8)]";
+  return (
+    <Panel app={app}>
+      <div className="p-7 sm:p-12 lg:p-14">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <div>
+            <AppHeader app={app} />
+            <p className="mt-6 leading-relaxed text-muted">{app.description}</p>
+            <Links app={app} />
+          </div>
+          <div className="lg:pt-2">
+            <Highlights items={app.highlights} first />
+            <Stack items={app.stack} />
+          </div>
+        </div>
+
+        {/*
+          Desktop: the first screenshot large, the other two stacked beside it. With 16:10 screenshots and gap g, both
+          sides are the same height when the large column is twice the small one plus 1.6g.
+        */}
+        <div className="mt-14 hidden grid-cols-[calc((200%_-_6.5rem)/3_+_2rem)_1fr] gap-5 md:grid">
+          <Image src={a.src} alt={a.alt} width={a.width} height={a.height} sizes="(min-width: 1280px) 700px, 62vw" className={img} />
+          <div className="flex flex-col gap-5">
+            {[b, c].map((s) => (
+              <Image key={s.src} src={s.src} alt={s.alt} width={s.width} height={s.height} sizes="(min-width: 1280px) 350px, 31vw" className={img} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="no-scrollbar -mt-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-7 pb-10 sm:px-12 md:hidden">
+        {app.screenshots.map((s) => (
+          <div key={s.src} className="w-[85%] max-w-[560px] shrink-0 snap-center">
+            <Image src={s.src} alt={s.alt} width={s.width} height={s.height} sizes="(min-width: 640px) 560px, 85vw" className={img} />
+          </div>
+        ))}
+      </div>
+    </Panel>
   );
 }
