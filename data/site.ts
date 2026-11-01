@@ -84,12 +84,40 @@ export type App = {
   icon: string;
   screenshots: { src: string; alt: string; width: number; height: number }[];
   stores: { platform: "Google Play" | "App Store"; status: StoreStatus; url: string }[];
-  theme: "calmeter" | "parksaarthi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora" | "answerkin";
+  theme: "calmeter" | "parksaarthi" | "neondrift" | "galacticrock" | "lumiflit" | "ondora" | "answerkin" | "stayward";
   /** schema.org applicationCategory. */
   schemaCategory: "GameApplication" | "HealthApplication" | "TravelApplication" | "UtilitiesApplication" | "BusinessApplication";
 };
 
 export const apps: App[] = [
+  {
+    slug: "stayward",
+    started: "2026-10-31",
+    name: "Stayward",
+    category: "Productivity · Visa",
+    tagline: "Status, without the stress.",
+    description:
+      "A simple, private day counter for people in the US on a visa where running out of days can end their legal status. Stayward counts F-1 OPT and STEM OPT unemployment days and the 60-day grace period after a job ends, and reminds you before your passport, EAD, I-20 and visa expire. Free, no account, and the app has no internet permission.",
+    highlights: [
+      "Written natively twice: Kotlin with Jetpack Compose on Android, Swift with SwiftUI on iPhone, iPad and Apple Watch, with the same rules, copy and tests on both",
+      "Counts OPT (90 days), STEM OPT (150 days) and the grace period for H-1B, L-1, O-1, TN, E-1, E-2, E-3 and H-1B1, weekends and days abroad included",
+      "Everything stays on the phone: no account, server, ads or analytics, local reminders before each limit, and encrypted document photos",
+    ],
+    stack: ["Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "WatchKit"],
+    website: "https://stayward-azure.vercel.app",
+    icon: "/apps/stayward/icon.png",
+    screenshots: [
+      { src: "/apps/stayward/1.jpg", alt: "Stayward home screen with 62 OPT unemployment days left of 90 and the days used so far", width: 552, height: 1200 },
+      { src: "/apps/stayward/2.jpg", alt: "Stayward calendar showing which days counted toward the OPT clock", width: 552, height: 1200 },
+      { src: "/apps/stayward/3.jpg", alt: "Stayward H-1B grace period countdown with 47 days left and the last day to act", width: 552, height: 1200 },
+    ],
+    stores: [
+      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.stayward.app" },
+      { platform: "App Store", status: "soon", url: "https://apps.apple.com" },
+    ],
+    theme: "stayward",
+    schemaCategory: "UtilitiesApplication",
+  },
   {
     slug: "answerkin",
     started: "2026-10-24",

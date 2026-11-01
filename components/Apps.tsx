@@ -13,6 +13,7 @@ export const tint: Record<App["theme"], string> = {
   lumiflit: "170 230 110",
   ondora: "47 91 255",
   answerkin: "215 255 58",
+  stayward: "255 184 107",
 };
 
 const statusLabel = { live: "Live", review: "In review", soon: "Coming soon" } as const;
