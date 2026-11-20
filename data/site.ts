@@ -113,7 +113,7 @@ export const apps: App[] = [
     ],
     stores: [
       { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.stayward.app" },
-      { platform: "App Store", status: "soon", url: "https://apps.apple.com" },
+      { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6829300815" },
     ],
     theme: "stayward",
     schemaCategory: "UtilitiesApplication",
@@ -193,8 +193,8 @@ export const apps: App[] = [
       { src: "/apps/lumiflit/3.jpg", alt: "Lumiflit purple forest with shooting stars at a score of 92", width: 552, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.lumiflit.app" },
-      { platform: "App Store", status: "soon", url: "https://apps.apple.com/app/id6824343928" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.lumiflit.app" },
+      { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6824343928" },
     ],
     theme: "lumiflit",
     schemaCategory: "GameApplication",
