@@ -251,7 +251,7 @@ export const apps: App[] = [
     ],
     stores: [
       { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.calmeter.app" },
-      { platform: "App Store", status: "review", url: "https://apps.apple.com/app/id6817736047" },
+      { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6817736047" },
     ],
     theme: "calmeter",
     schemaCategory: "HealthApplication",
