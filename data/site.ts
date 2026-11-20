@@ -165,7 +165,7 @@ export const apps: App[] = [
       { src: "/apps/ondora/3.jpg", alt: "Ondora vault sorted into IDs, insurance, health, travel, bills and warranties", width: 539, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.ondora.app" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.ondora.app" },
       { platform: "App Store", status: "soon", url: "https://apps.apple.com" },
     ],
     theme: "ondora",
