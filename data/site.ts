@@ -112,7 +112,7 @@ export const apps: App[] = [
       { src: "/apps/stayward/3.jpg", alt: "Stayward H-1B grace period countdown with 47 days left and the last day to act", width: 552, height: 1200 },
     ],
     stores: [
-      { platform: "Google Play", status: "soon", url: "https://play.google.com/store/apps/details?id=com.stayward.app" },
+      { platform: "Google Play", status: "live", url: "https://play.google.com/store/apps/details?id=com.stayward.app" },
       { platform: "App Store", status: "live", url: "https://apps.apple.com/app/id6829300815" },
     ],
     theme: "stayward",
